@@ -1,45 +1,99 @@
 # Software Defined Networking (SDN) with Mininet and OpenFlow
 
-This repository contains a series of practical labs designed to introduce and reinforce key Software Defined Networking concepts using Mininet and OpenFlow. The labs focus on building and simulating different network topologies, configuring programmable flows at multiple layers, and exploring how SDN can simplify and automate network control.
+This repository contains a series of labs designed to introduce key Software Defined Networking (SDN) concepts using Mininet and OpenFlow. The labs guide you through building network topologies, testing connectivity, configuring programmable flows, and understanding how SDN simplifies network control.
 
 ---
 
-## Simulating a Simple Network with Mininet
+## Overview
 
-In this lab, we explore the basics of Mininet and learn how to simulate a simple network topology. Mininet is a powerful network emulator that allows users to create virtual networks for testing, research, and learning without requiring physical hardware. By the end of the lab, you will understand how to:
+Through these labs, you will learn how to:
 
-* Create a custom network topology
-* Test connectivity between hosts
-* Interact with the network using Mininet's command-line interface (CLI)
+* Build custom network topologies in Mininet
+* Simulate network behavior without physical hardware
+* Test connectivity using basic tools (ping, ip, route, etc.)
+* Interact with programmable flows at Layers 2, 3, and 4
+* Use SDN controllers to manage the data plane
 
-### Prerequisites
+---
 
-Before starting, ensure the following are available:
+## Topics Covered
 
-* Mininet installed on a Linux-based system:
+This repository demonstrates:
+
+* Simulating simple network topologies
+* Layer 2 OpenFlow forwarding
+* Layer 3 OpenFlow forwarding
+* Layer 4 OpenFlow forwarding
+* Two-subnet topologies
+* VLAN networks in Mininet
+* ARP fundamentals and advanced ARP scenarios
+* Routing across subnets
+* Managing programmable network flows via SDN controllers
+
+---
+
+## Requirements
+
+Before running the labs, ensure you have:
+
+* A Linux-based system (Ubuntu recommended)
+* Python 3 installed
+* Basic networking knowledge (hosts, switches, ARP, routing)
+* Mininet installed with a functional OpenFlow controller
+
+---
+
+## Installation and Setup
+
+### 1. Install Mininet
 
 ```
 sudo apt-get update
 sudo apt-get install mininet
 ```
 
-* Python 3 installed
-* Basic networking knowledge (e.g., hosts, switches, ping)
+### 2. Verify Mininet Binary
 
----
+Check that the `mn` command exists:
 
-## Covered Topics
+```
+which mn
+```
 
-This repository demonstrates the following SDN and Mininet concepts:
+If empty, install Mininet with Open vSwitch support:
 
-* Simulating simple network topologies in Mininet
-* Layer 2 traffic forwarding using OpenFlow
-* Layer 3 traffic forwarding using OpenFlow
-* Layer 4 traffic forwarding using OpenFlow
-* Simulating two-subnet network topologies
-* VLAN networks in Mininet
-* ARP fundamentals and advanced ARP scenarios
-* Routing across subnets using Mininet
-* Managing programmable network flows via SDN controllers
+```
+sudo apt-get install mininet openvswitch-switch openvswitch-common
+```
+
+Verify again:
+
+```
+mn --version
+```
+
+### 3. Test Default Topology
+
+Run:
+
+```
+sudo mn
+```
+
+Expected result: Mininet CLI starts with a default controller.
+
+If it reports missing controller support, install the test controller:
+
+```
+sudo apt-get install openvswitch-testcontroller
+```
+
+Then re-run:
+
+```
+sudo mn
+```
+
+This resolves the `Could not find a default OpenFlow controller` issue.
 
 ---
