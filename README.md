@@ -6,7 +6,6 @@ This repository contains a series of labs designed to introduce key Software Def
 
 ## Overview
 
-Through these labs, you will learn how to:
 
 * Build custom network topologies in Mininet
 * Simulate network behavior without physical hardware
@@ -34,7 +33,6 @@ This repository demonstrates:
 
 ## Requirements
 
-Before running the labs, ensure you have:
 
 * A Linux-based system (Ubuntu recommended)
 * Python 3 installed
